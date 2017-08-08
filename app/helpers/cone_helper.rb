@@ -1,0 +1,2 @@
+module ConeHelper
+end
