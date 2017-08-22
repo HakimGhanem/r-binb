@@ -1,0 +1,65 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length > 0 %>
+            </div>
+        </div>
+        
+        
+        <br>
+        
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3 tewt-center">
+                        <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %>
+                        <br>
+                        <br>
+                        <%= @room.user.fullname %>
+                        
+                    </div>
+                    <div class="col-md-9">
+                        <h4> <%= @room.listing_name %></h4>
+                        <%= @room.address %>
+                        <div class="row text-center row-space-1">
+                            <div class="col-sm-3">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <i class="fa fa-users fa-2x"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <i class="fa fa-bed fa-2x"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <i class="fa fa-bath fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-sm-3">
+                                <%= @room.home_type %>
+                            </div>
+                            <div class="col-sm-3">
+                                <%= @room.accomodate %>
+                            </div>
+                            <div class="col-sm-3">
+                                <%= @room.bed_room %>
+                            </div>
+                            <div class="col-sm-3">
+                                <%= @room.bath_room %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    <div class="col-md-4">
+        
+    </div>
+
+</div>
+</div>

@@ -27,5 +27,5 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 Repository de la formation Udemy
 
 #Hakim readme
-heroku run rake db:migrate    //Aprés une migration
 git push heroku master
+heroku run rake db:migrate    //Aprés une migration
