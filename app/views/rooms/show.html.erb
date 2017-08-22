@@ -61,5 +61,29 @@
         
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <h2> A propos de ce logement</h2>
+            <p><%= @room.summary %></p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-2">
+            <p> Equipements</p>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="equipements">
+                        <li class="<%= 'text-line-through' if !@room.is_wifi %>"> WIFI</li>
+                        <li class="<%= 'text-line-through' if !@room.is_shampoo %>"> Shampooing</li>
+                        <li class="<%= 'text-line-through' if !@room.is_kitchen %>"> CUISINE</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
