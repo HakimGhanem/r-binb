@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   end
   resources :photos  
 
+
+get '/preload' => 'reservations#preload'
+get '/preview' => 'reservations#preview'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
