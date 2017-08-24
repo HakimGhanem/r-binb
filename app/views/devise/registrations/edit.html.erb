@@ -1,60 +1,54 @@
 <div class = "row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item">
-        <%= link_to 'Modifier mon profil', edit_user_registration_path, class:'sidebar-link active' %>
-      </li>
-    </ul>
-    <br>
-        <%= link_to 'Voir mon profil', user_path(current_user.id), class:'btn btn-default wide1' %>
-  </div>
-  <div class="col-md-7 text-center"></div>      
+  <div class="col-md-7 text-center">     
     
       
      <div class="panel panel-default">
-       <div class="panel-heading"> Mon profil</div>
+       <div class="panel-heading"> Modifier mon profil</div>
          <div class="container">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render'shared/devise_errors'%>
       
         
-        
+        <br>
         <div class="form-group">
-          <%= f.text_field :fullname, autofocus: true, class: "form-control", placeholder: "Nom complet (prénom+nom)" %>
+          Nom complet (prénom+nom) :<%= f.text_field :fullname, autofocus: true, class: "form-control" %>
         </div>
         
         <div class="form-group">
-          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Adresse email" %>
+          Adresse email : <%= f.email_field :email, autofocus: true, class: "form-control"%>
         </div>
     
         <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-6">
            <div class="form-group">
-             <span class="btn btn-default btn-file">
-               Upload ma photo
-              <%= f.file_field :avatar %>
-             </span>
+             Modifier ma photo de profil :
+              <%= image_tag avatar_url(current_user), class: "img-circle avatar-full" %>
+           </div>
+         </div>
+          <div class="col-md-6">
+           <div class="form-group">
+              <span class="btn btn-default btn-file">Parcourir <%= f.file_field :avatar %></span>
            </div>
          </div>
         </div>
         
          <div class="form-group">
-          <%= f.text_field :phone_number, class:"form-control", placeholder: "Numéro de Téléphone" %>
+          Numéro de Téléphone : <%= f.text_field :phone_number, class:"form-control" %>
         </div>
         
          <div class="form-group">
-          <%= f.text_area :description, rows:5, col:25, class:"form-control", placeholder: "Description" %>
+          Présentation : <%= f.text_area :description, rows:5, col:25, class:"form-control" %>
         </div>
         
         <div class="field">
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Nouveau mdp (si vous souhaitez le changer" %>
+          Nouveau mot de passe : <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Nouveau mdp (si vous souhaitez le changer" %>
           
         </div>
-      </br>
+      <br>
         <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation mdp" %>
+          Confirmation : <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation mdp" %>
         </div>
-      <br />
+      <br>
       
         <div class="actions">
           <%= f.submit "Enregistrer", class: "btn btn-primary" %>

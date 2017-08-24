@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   resources :users, only:  [:show]
-  resources :rooms do
+  resources :rooms, path: 'annonces' do
     resources :reservations, only: [:create]
   end
   resources :photos  
@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
 get '/preload' => 'reservations#preload'
 get '/preview' => 'reservations#preview'
+get 'your_trips' => 'reservations#your_trips' , path: "mes_voyages" #Path ==> pour avoir un nom autre que celui du controlleur dans la barre url
+get 'your_reservations' => 'reservations#your_reservations' , path: "mes_reservations" #Path ==> pour avoir un nom autre que celui du controlleur dans la barre url
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

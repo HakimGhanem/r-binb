@@ -35,6 +35,14 @@ class ReservationsController < ApplicationController
         redirect_to @reservation.room, notice: "Votre réservation a bien été enregistrée"
     end
     
+    def your_trips
+        @trips = current_user.reservations
+    end
+    
+    def your_reservations
+        @rooms = current_user.rooms
+    end
+    
     
     private
     def reservation_params
