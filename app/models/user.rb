@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
     
 has_many :rooms  #Un user peut avoir une ou plusieurs annonces de logement
 has_many :reservations
+has_many :reviews
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
