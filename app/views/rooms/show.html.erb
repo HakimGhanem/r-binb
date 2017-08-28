@@ -148,7 +148,7 @@
     <!-- Commentaires -->
     <div class="row">
       <div class="col-md-12">
-            <h3>Commentaires <%= @room.average_rating %> (<%= @reviews.count %>)</h3>
+            <h3>Commentaires <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
             <div class="container">
                 <div>
                     <%= render 'reviews/form' if @booked && !@hasReview %>
@@ -158,8 +158,8 @@
                 </div>
            </div>
         </div>
- 
  </div>
+
     
     <!-- GOOGLE MAPS -->
     
@@ -183,10 +183,20 @@
                           position: uluru,
                           map: map
                         });
-                      }
+                      };
+
                 </script>
+                
                 <script async defer
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXUhlKwQ3FT2V9Tb9Bu5IrdGtE0XebRNc&callback=initMap">
+                </script>
+                
+                <script>
+                $('#average_rating'.raty({
+                path: '/assets',
+                readOnly: true,
+                score: <%= @room.average_rating %>
+                });
                 </script>
 
 

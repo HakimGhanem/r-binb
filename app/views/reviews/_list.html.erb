@@ -1,5 +1,4 @@
-    <% if @reviews.count == 0 %># on vérifie si l’annonce a des commentaires
-     
+    <% if @reviews.count == 0 %>
           <div class="text-center"><h4>Aucun commentaire.</h4></div>
      
      <% else %>
@@ -19,7 +18,7 @@
      
                   <div>
      
-                     <strong><%= r.user.fullname %> <%= r.star %> </strong>
+                     <strong><%= r.user.fullname %> <div id="stars_<%= r.id %>"></div> </strong>
      
                      <span class="pull-right">
      
@@ -36,8 +35,23 @@
                </div>
      
             </div>
+            
              <hr>
              <br>
+             
+            <script>
+                $('#stars_<%= r.id %>'.raty({
+                    path: '/assets',
+                    readOnly: true,
+                    score: <%= r.star %>
+                });
+            </script>
+            
+            
         <% end %>
      
      <% end %>
+     
+     
+     
+             
