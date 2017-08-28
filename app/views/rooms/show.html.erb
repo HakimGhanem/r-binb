@@ -158,6 +158,13 @@
                 </div>
            </div>
         </div>
+        <script>
+                    $('#average_rating').raty({
+                    path: '/assets',
+                    readOnly: true,
+                    score: <%= @room.average_rating %>
+                });
+                </script>
  </div>
 
     
@@ -191,13 +198,7 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXUhlKwQ3FT2V9Tb9Bu5IrdGtE0XebRNc&callback=initMap">
                 </script>
                 
-                <script>
-                $('#average_rating'.raty({
-                path: '/assets',
-                readOnly: true,
-                score: <%= @room.average_rating %>
-                });
-                </script>
+                
 
 
         </div>
