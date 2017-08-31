@@ -360,3 +360,15 @@ margin:0 auto;
 #article {
  width:560px;
 }
+
+
+  .search { position: relative; }
+.search input { text-indent: 30px;}
+.search .fa-search { 
+ position: absolute;
+ top: 12px;
+ left: 7px;
+ font-size: 15px;
+ opacity: 0.5;
+ 
+}
