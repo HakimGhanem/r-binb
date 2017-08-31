@@ -204,5 +204,24 @@
         </div>
     </div>
     
+    <!-- Logements à proximité -->
+    <h3>A proximité : </h3>
+    <div class="row">
+        <% for room in @room.nearbys(2).limit(3) %>  <!-->2miles</-->
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading preview">
+                    <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+                </div>
+                <div class="panel-bdy">
+                    <%= link_to room.listing_name, room %>
+                    (à <%= (room.distance*1,6)ruond(2) %> km)
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+
 </div>
 </div>
