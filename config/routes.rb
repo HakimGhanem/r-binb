@@ -21,7 +21,7 @@ get '/preview' => 'reservations#preview'
 get 'your_trips' => 'reservations#your_trips' , path: "mes_voyages" #Path ==> pour avoir un nom autre que celui du controlleur dans la barre url
 get 'your_reservations' => 'reservations#your_reservations' , path: "mes_reservations" #Path ==> pour avoir un nom autre que celui du controlleur dans la barre url
 
-
+get '/search' => 'pages#search'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -15,27 +15,18 @@
               </div>
      
               <div class="col-md-11">
-     
                   <div>
-     
                      <strong><%= r.user.fullname %> <div id="stars_<%= r.id %>"></div> </strong>
-     
                      <span class="pull-right">
-     
                      <%= link_to "Supprimer mon commentaire", [@room, r], method: :delete, data: {confirm: "Etes-vous sûr?"} if current_user && current_user == r.user %>
-     
                      </span>
      
                   </div>
-     
                   <div><%= r.created_at.strftime("%d.%m.%y") %></div>
-     
                   <div><%= r.comment %></div>
                      <hr>
                </div>
-     
             </div>
-            
              <hr>
              <br>
              
