@@ -364,11 +364,25 @@ margin:0 auto;
 
   .search { position: relative; }
 .search input { text-indent: 30px;}
+
+
 .search .fa-search { 
  position: absolute;
  top: 12px;
  left: 7px;
  font-size: 15px;
  opacity: 0.5;
- 
+
 }
+
+.conversation {
+ 
+ color: #7f7f7f;
+ padding: 10px;
+ 
+ }
+ 
+ .conversation:hover, .conversation:focus {
+ background-color: #F4F4F5;
+ 
+ } 

@@ -24,6 +24,11 @@
                 <i class="fa fa-home" aria-hidden="true"></i> Devenir hôte
               <% end %>
             </li>
+            <li>
+              <%= link_to conversations_path do %>
+                <i class="fa fa-home" aria-hidden="true"></i> Messages
+              <% end %>
+            </li>
             
             <% if (!user_signed_in?) %>
                 <li><%= link_to 'Inscription', new_user_registration_path %></li>
