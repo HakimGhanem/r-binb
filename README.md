@@ -29,3 +29,9 @@ Repository de la formation Udemy
 #Hakim readme
 git push heroku master
 heroku run rake db:migrate    //Aprés une migration
+http://r-binb.herokuapp.com/  Site web heroku de l'appli
+
+Ajouter un ou plusieurs champs à une migration :
+    rails g migration AddFieldsToUser blabla:string blublu:string
+    
+
