@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
     
     before_action :authenticate_user!
     before_action :set_conversation
+    skip_before_filter :verify_authenticity_token
     
     def index
         if current_user == @conversation.sender || current_user == @conversation.recipient
