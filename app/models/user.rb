@@ -20,7 +20,7 @@ validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 # Model Room
 
 def self.from_omniauth(auth)
-    user=User.where(email: auth.info.email).first
+    user = User.where(email: auth.info.email).first
     if user
         return user
     else
@@ -29,7 +29,7 @@ def self.from_omniauth(auth)
             u.provider = auth.provider
             u.uid = auth.uid
             u.email = auth.info.email
-            u.image = u.auth.image
+            u.image = auth.info.image
             u.password = Devise.friendly_token[0,20]
         end
     end
